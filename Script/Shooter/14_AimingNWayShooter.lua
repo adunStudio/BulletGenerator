@@ -13,7 +13,7 @@ AimingNWayShooter.bulletAngleRate = 0
 AimingNWayShooter.bulletSpeedRate = 0
 
 function AimingNWayShooter:Fire(_x, _y)
-    local newAngle = GetAngle(_x, _y, self.x, self.y)
+    local newAngle = GetAngle(self.x, self.y, _x, _y)
 
     if self.time == 0 then
         ShootNWay(self.x, self.y, newAngle, self.shotAngleRange, self.shotSpeed, self.shotCount, self.bulletAngleRate, self.bulletSpeedRate)
