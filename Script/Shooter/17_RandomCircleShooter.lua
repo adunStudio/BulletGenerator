@@ -12,7 +12,7 @@ RandomCircleShooter.time = 0
 function RandomCircleShooter:Fire()
     if self.time == 0 then
         for i = 1, self.shotCount, 1 do
-            local bullet = Bullet:New{x = self.x, y = self.y, angle = math.random(0, 360), angleRate = 0, speed = self.shotSpeed, speedRate = 0}
+            local bullet = Bullet:New{x = self.x, y = self.y, angle = math.random(1, 360), angleRate = 0, speed = self.shotSpeed, speedRate = 0}
             bullet:SetImage(IMAGE["bullet"])
             table.insert(bullets, bullet)
         end

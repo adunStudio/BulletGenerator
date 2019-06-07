@@ -13,6 +13,7 @@ require("Script/Shooter/14_AimingNWayShooter")
 require("Script/Shooter/15_IntermittentAimingNWayShooter")
 require("Script/Shooter/16_RandomNWayShooter")
 require("Script/Shooter/17_RandomCircleShooter")
+require("Script/Shooter/18_RollingNWayShooter")
 
 IMAGE = {}
 
@@ -45,7 +46,7 @@ function love.load()
     player:SetImage(IMAGE["ship"])
     player:SetPosition(100, 500)
 
-    enemys[1] = DirectionalShooter:New{shotAngle = 90, shotSpeed = 25}
+    enemys[1] = DirectionalShooter:New{shotAngle = 360, shotSpeed = 25}
     enemys[2] = SpiralShooter:New{shotAngle = 90, shotAngleRate = 10, shotSpeed = 10}
     enemys[3] = MultipleSpiralShooter:New{shotAngle = 90, shotAngleRate = 10, shotSpeed = 10, shotCount = 4}
     enemys[4] = IntervalMultipleSpiralShooter:New{shotAngle = 1.14, shotAngleRate = 10.57, shotSpeed = 20, shotCount = 4, interval = 6}
@@ -57,6 +58,7 @@ function love.load()
     enemys[10] = IntermittentAimingNWayShooter:New{shotAngleRange = 90, shotSpeed = 10, shotCount = 11, interval = 4, shotTime = 10, waitTime = 20}
     enemys[11] = RandomNWayShooter:New{shotAngle = 90, shotAngleRange = 45, shotSpeed = 15, shotCount = 6, interval = 7}
     enemys[12] = RandomCircleShooter:New{shotSpeed = 15, shotCount = 6, interval = 2}
+    enemys[13] = RollingNWayShooter:New{shotAngle = 90, shotAngleRange = 30, shotAngleRate = -25, shotSpeed = 7, shotCount = 16, nWayCount = 1, interval = 7}
 
     enemyIndex = #enemys
     enemy = enemys[enemyIndex]
