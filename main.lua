@@ -14,6 +14,7 @@ require("Script/Shooter/15_IntermittentAimingNWayShooter")
 require("Script/Shooter/16_RandomNWayShooter")
 require("Script/Shooter/17_RandomCircleShooter")
 require("Script/Shooter/18_RollingNWayShooter")
+require("Script/Shooter/19_WavingNWayShooter")
 
 IMAGE = {}
 
@@ -59,6 +60,7 @@ function love.load()
     enemys[11] = RandomNWayShooter:New{shotAngle = 90, shotAngleRange = 45, shotSpeed = 15, shotCount = 6, interval = 7}
     enemys[12] = RandomCircleShooter:New{shotSpeed = 15, shotCount = 6, interval = 2}
     enemys[13] = RollingNWayShooter:New{shotAngle = 90, shotAngleRange = 30, shotAngleRate = -25, shotSpeed = 7, shotCount = 16, nWayCount = 1, interval = 7}
+    enemys[14] = WavingNWayShooter:New{shotAngle = 90, shotAngleRange = 30, wavingAngleRange = 30,  shotSpeed = 7, shotCount = 6, interval = 7, cycle = 120}
 
     enemyIndex = #enemys
     enemy = enemys[enemyIndex]
